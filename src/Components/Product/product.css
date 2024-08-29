@@ -1,0 +1,301 @@
+/* Container styling */
+.container1 {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 100%;
+  max-width: 1248px;
+  height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px; /* Adds padding to the sides */
+  box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+/* Style for the inner div elements */
+.container1 div {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the select dropdown */
+.select-box {
+  width: 200px; /* Adjust the width as needed */
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  appearance: none; /* Removes default arrow in some browsers */
+  -webkit-appearance: none; /* Removes default arrow in Safari */
+  -moz-appearance: none; /* Removes default arrow in Firefox */
+  cursor: pointer;
+  position: relative;
+}
+
+/* To create a custom dropdown arrow */
+.select-box::after {
+  content: "▼"; /* Custom arrow character */
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allows clicking through the arrow */
+}
+
+/* Sidebar Container */
+.sidebar-div {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Left sidebar 300px, right sidebar takes the remaining space */
+  width: calc(100% - 140px); /* Adjust width to account for the left margin */
+  margin-left: 140px;
+  height: 100vh;
+}
+
+/* Left Sidebar */
+.sidebar-left {
+  /* border: 1px solid red; */
+  width: 300px;
+  height: 750px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar-left select {
+  width: 100%;
+  border: none;
+}
+
+.sidebar-left p {
+  text-align: start;
+  width: 100%;
+}
+
+.sidebar-left div {
+  height: 50px;
+  margin-bottom: 15px;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+
+/* Right Sidebar */
+.sidebar-right {
+  /* border: 1px solid blue; */
+  padding: 20px;
+  width: 932px;
+}
+.sidebar-right h2 {
+  text-align: start;
+}
+/* card */
+
+/* Card container styling */
+.card-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 462px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+}
+
+/* Image styling */
+.card-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+.card-content {
+  text-align: start;
+  height: 50px;
+  /* border: 1px solid red; */
+}
+.card span {
+  font-size: 14px;
+}
+.card-title {
+  text-align: start;
+  margin-top: -5px;
+}
+.footer-card {
+  margin-top: -20px;
+}
+
+.card span {
+  font-size: 14px;
+}
+.card a {
+  font-size: 13px;
+}
+
+/* Heart icon styling */
+.card-icon {
+  cursor: pointer;
+}
+/* .custom-span {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+} */
+
+
+/* Responsive Design */
+
+/*  */
+@media only screen and (max-width: 768px) {
+  .container1{
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .container1 .countter-pro{
+    display: none;
+  }
+  .select-box {
+    width: 150px; /* Adjust the width as needed */
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white;
+   
+  }
+  .sidebar-div{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+  }
+  .sidebar-left {
+    display: none;
+  }
+  .sidebar-right{
+    width: 100%;
+  }
+  .card-data{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    /* margin: auto; */
+    gap: 20px;
+  }
+  
+  .card {
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    position: relative;
+    background-color: white;
+  }
+  
+  /* Image styling */
+  .card-image {
+    width: 160;
+    height: 224px;
+    overflow-y: hidden;
+    object-fit: cover;
+  }
+  .card-content {
+    text-align: start;
+    height: 50px;
+    /* border: 1px solid red; */
+  }
+  .card span {
+    font-size: 10px;
+  }
+ 
+  
+ 
+  
+}
+
+@media only screen and (max-width: 650px) {
+  .container1{
+    width: 100%;
+    justify-content:space-around;
+  }
+  .container1 .countter-pro{
+    display: none;
+  }
+  .select-box {
+    width: 120px; /* Adjust the width as needed */
+    padding: 2px ;
+    font-size: 12px;
+    /* border-radius: 4px; */
+    border: none;
+    background-color: white;
+    
+    cursor: pointer;
+    position: relative;
+  }
+  .sidebar-div{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+  }
+  .sidebar-right h2{
+    display: none;
+  }
+  .sidebar-left {
+    display: none;
+  }
+.sidebar-right{
+  width: 100%;
+}
+.card-data{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto;
+  /* margin: auto; */
+  gap: 10px;
+}
+
+.card {
+  width: 168px;
+  height: 290px;
+  border-radius: 5px;
+  position: relative;
+  background-color: white;
+
+}
+
+/* Image styling */
+.card-image {
+  width: 160;
+  height: 224px;
+  overflow-y: hidden;
+  object-fit: cover;
+}
+.card-content {
+  text-align: start;
+  height: 50px;
+  /* border: 1px solid red; */
+}
+.card span {
+  font-size: 10px;
+}
+.card-title {
+  text-align: start;
+  margin-top: -5px;
+  font-size: 16px;
+}
+.custom-span {
+  display: block;
+  margin-top: -60px;
+  margin-left: 140px;
+}
+
+
+}
+
+
+
