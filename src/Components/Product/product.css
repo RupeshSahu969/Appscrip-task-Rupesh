@@ -28,7 +28,7 @@
   background-color: white;
   z-index: 1000;
 }
-.containetFilter{
+.containetFilter {
   display: none;
 }
 .hidden {
@@ -174,15 +174,14 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-
 @media only screen and (max-width: 768px) {
   .container1 {
     width: 100%;
     justify-content: space-around;
   }
-.togglecDat{
-  display: none;
-}
+  .togglecDat {
+    display: none;
+  }
   .container1 .countter-pro {
     display: none;
   }
@@ -233,7 +232,7 @@
   .card span {
     font-size: 10px;
   }
-  .containetFilter{
+  .containetFilter {
     display: none;
   }
 }
@@ -267,7 +266,7 @@
   .sidebar-left {
     /* display: none; */
   }
- 
+
   .sidebar-right {
     width: 100%;
   }
@@ -318,16 +317,13 @@
     font-size: 10px;
     display: flex;
   }
-  .containetFilter{
+  .containetFilter {
     display: block;
   }
- 
 }
 
 .togglecDat {
-  display: block; /* Show by default */
-
-  /* Hide on mobile view (max-width: 650px) */
+  display: block;
   @media (max-width: 650px) {
     display: none;
   }
