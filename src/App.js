@@ -1,17 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-import Product from './Components/Product/Product';
-import Footer from './Pages/Footer/Footer';
+import MainPage from "./Pages/MainPage/MainPage";
 
 
 function App() {
   return (
     <div>
-     <Navbar/>
-     {/* <Product/> */}
-     {/* <Footer/> */}
-    </div>
+     <MainPage/>
+</div>
+     
   );
 }
 

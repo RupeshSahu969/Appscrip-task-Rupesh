@@ -4,6 +4,7 @@ import { CiHeart } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
+import logo from "../assert/logo.jpeg";
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -15,7 +16,19 @@ const Navbar = () => {
         <div className="loremtext1">Lorem ipsum dolor</div>
       </div>
       <div className="container">
-        <div>Logo</div>
+        <button
+          className="mobile-menu-icon"
+          onClick={() => setIsMobile(!isMobile)}
+        >
+          {isMobile ? (
+            <i className="fas fa-times"></i>
+          ) : (
+            <i className="fas fa-bars"></i>
+          )}
+        </button>
+        <div>
+          <img src={logo} className="img-logo" alt="logo.jpg" />
+        </div>
 
         <div className="logo"> LOGO </div>
         <div className="logocontainer">
@@ -33,41 +46,31 @@ const Navbar = () => {
           </div>
           <div>
             <select className="selectCon">
-              <option value="ENG">ENg</option>
+              <option value="ENG">ENG</option>
             </select>
           </div>
         </div>
       </div>
       <div className="navbar">
-        <button
-          className="mobile-menu-icon"
-          onClick={() => setIsMobile(!isMobile)}
-        >
-          {isMobile ? (
-            <i className="fas fa-times"></i>
-          ) : ( 
-            <i className="fas fa-bars"></i>
-          )}
-        </button>
         <ul className={isMobile ? "nav-links-mobile" : ""}>
           <li>
-            <a href="#shop"> SHOP</a>
+            <a href="#shop">SHOP</a>
           </li>
           <li>
             <a href="#skills">SKILLS</a>
           </li>
           <li>
-            <a href="#stories"> STORIES</a>
+            <a href="#stories">STORIES</a>
           </li>
           <li>
             <a href="#about">ABOUT</a>
           </li>
           <li>
-            <a href="#contact"> CONTACT</a>
+            <a href="#contact">CONTACT</a>
           </li>
         </ul>
       </div>
-      {/* // about */}
+      {/* about */}
       <div className="aboutdiv">
         <div className="about">Discover our products</div>
         <div>

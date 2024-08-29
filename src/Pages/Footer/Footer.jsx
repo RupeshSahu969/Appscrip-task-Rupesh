@@ -11,7 +11,8 @@ import icondata5 from "../../Components/assert/usa.jpeg";
 
 const Footer = () => {
   return (
-    <div id="footer">
+    <>
+    <div className="footer">
       <div className="footer-title">
         <div className="footer-section">
           <h2>Be the first to know</h2>
@@ -43,7 +44,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <div>
+        <div className="footer-first">
           <h3 className="footer-metta">mettā muse</h3>
           <ul>
             <li>About Us</li>
@@ -69,13 +70,14 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div>
+        <div className="footer-follow">
           <h3>FOLLOW US</h3>
-          <hr className="custom-hr3" />
+          
           <div className="footer-icon">
             <div><CiSearch /></div>
             <div><CiLinkedin /></div>
           </div>
+          <hr className="custom-hr3" />
           <h4>mettā muse Accepts</h4>
           <div className="footer-btn">
             <div><img src={google} alt="Google" /></div>
@@ -89,9 +91,10 @@ const Footer = () => {
       </div>
 
       <div className="footer-copy">
-        <p>Copyright © 2023 mettamuse. All rights reserved.</p>
+        <p>Copyright &copy; 2024 mettamuse. All rights reserved.</p>
       </div>
     </div>
+    </>
   );
 };
 
