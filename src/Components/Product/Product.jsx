@@ -1,33 +1,56 @@
 import React, { useEffect, useState } from "react";
 import "./product.css";
-import { IoIosArrowBack } from "react-icons/io";
-import axios from "axios";
 import { CiHeart } from "react-icons/ci";
+import axios from "axios";
+
 const Product = () => {
   const [data, setData] = useState([]);
+  const [isFixed, setIsFixed] = useState(false);
+  const [isSidebarHidden, setIsSidebarHidden] = useState(false);
+
+  const toggleFilter = () => {
+    setIsSidebarHidden(!isSidebarHidden);
+  };
 
   useEffect(() => {
-    handleGet();
+    const handleScroll = () => {
+      const container = document.querySelector(".container1");
+      const offset = container.offsetTop;
+
+      if (window.scrollY > offset) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const handleGet = () => {
+  useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
       .then((res) => {
         setData(res.data);
       })
       .catch((err) => console.log(err));
-  };
-  console.log(data);
+  }, []);
+
   return (
-    <>
-      <div className="container1">
+    <div className={`containerProduct ${isSidebarHidden ? "full-width" : ""}`}>
+      <div className={`container1 ${isFixed ? "fixed" : ""}`}>
         <div>
-          <div className="countter-pro">123 Items</div>
-          <div style={{ display: "flex", marginLeft: 20 }}>
-            <IoIosArrowBack />
-            HIDE FILTER
+          <div className="countter-pro"> {data.length} Items</div>
+          <div className="togglecDat" onClick={toggleFilter}>
+            {isSidebarHidden ? "SHOW FILTER" : "HIDE FILTER"}
           </div>
+        </div>
+        <div className="containetFilter">
+    <p>Filter</p>
         </div>
         <div>
           <select className="select-box">
@@ -40,9 +63,10 @@ const Product = () => {
         </div>
       </div>
 
-      {/* Sidebar */}
+      {/* Sidebar and Product Section */}
       <div className="sidebar-div">
-        <div className="sidebar-left">
+        <div className={`sidebar-left ${isSidebarHidden ? "hidden" : ""}`}>
+          {/* Sidebar contents */}
           <input type="checkbox" /> CUSTOMIZABLE
           <hr />
           <div>
@@ -102,9 +126,9 @@ const Product = () => {
           </div>
           <hr />
         </div>
-        <div className="sidebar-right">
+        <div className={`sidebar-right ${isSidebarHidden ? "full-width" : ""}`}>
           <h2>NEW PRODUCT</h2>
-          <div className="card-data">
+          <div className={`card-data ${isSidebarHidden ? "column4" : ""}`}>
             {data.map((item) => (
               <div className="card" key={item.id}>
                 <img src={item.image} alt={item.title} className="card-image" />
@@ -116,17 +140,16 @@ const Product = () => {
                     </a>
                     <span> or Create an account to see pricing </span>
                     <span className="custom-span">
-  <CiHeart className="custom-spans" size={24} />
-</span>
+                      <CiHeart className="custom-spans" size={24} />
+                    </span>
                   </div>
                 </div>
-                <div className="card-icon"></div>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

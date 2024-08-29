@@ -1,6 +1,3 @@
-.mainContainer {
-  border: 1px solid black;
-}
 .loremdiv {
   display: flex;
   justify-content: space-around;
@@ -8,10 +5,10 @@
   margin: auto;
   height: 32px;
 }
-.loremtext1{
+.loremtext1 {
   color: red;
 }
-.loremtext2{
+.loremtext2 {
   color: red;
 }
 .container {
@@ -92,24 +89,25 @@ p {
     align-items: flex-start;
     height: auto;
   }
+  .img-logo {
+    width: 19.89px;
+    height: 19.91px;
+    margin-top: 7px;
+  }
 
-  ul {
+  .navbar ul {
     display: none;
     flex-direction: column;
     width: 100%;
     padding-left: 0;
   }
 
-  .nav-links-mobile {
+  .navbar ul.nav-links-mobile {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
   }
 
-  ul li {
-    width: 100%;
-    margin: 10px 0;
+  .mobile-menu-icon {
+    display: block;
   }
 
   .mobile-menu-icon {
@@ -118,44 +116,61 @@ p {
 }
 
 @media only screen and (max-width: 650px) {
-.mainContainer{
-  width: 100%;
-}
-.loremtext1{
-  display: none;
-}
-.loremtext2{
-  color: red;
-  font-size: 14px;
-}
-.container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-}
-.logocontainer {
-  display: flex;
-  gap: 2px;
-  margin-top: 5px;
-}
-.selectCon{
-  display: none;
-}
-.aboutdiv{
-  width: 100%;
-}
-.logo {
-  font-weight: 800;
-  font-size: 20px;
-  margin-top: 1px;
-}
-.about{
-  font-size: 24px;
-}
-.about-text{
-  width: 90%;
-  font-size: 14px;
-}
+  .mainContainer {
+    width: 100%;
+  }
+  .loremtext1 {
+    display: none;
+  }
+  .loremtext2 {
+    color: red;
+    font-size: 14px;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+  .img-logo {
+    width: 19.89px;
+    height: 19.91px;
+  }
+  .logocontainer {
+    display: flex;
+    gap: 10px;
+    margin-top: 2px;
+  }
+  .selectCon {
+    display: none;
+  }
+  .aboutdiv {
+    width: 100%;
+  }
 
+  .logo {
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: 0px;
+  }
+  .about {
+    font-size: 24px;
+  }
+  .about-text {
+    width: 90%;
+    font-size: 14px;
+  }
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+  }
 
+  .navbar ul.nav-links-mobile {
+    display: flex;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
 }

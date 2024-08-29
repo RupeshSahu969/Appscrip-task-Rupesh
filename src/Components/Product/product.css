@@ -1,4 +1,9 @@
-/* Container styling */
+.containerProduct {
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 100%;
+}
+
 .container1 {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   width: 100%;
@@ -8,53 +13,60 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px; /* Adds padding to the sides */
-  box-sizing: border-box; /* Ensures padding doesn't affect the width */
+  padding: 0 15px;
+  box-sizing: border-box;
+  position: relative;
+  top: 0;
 }
 
-/* Style for the inner div elements */
-.container1 div {
-  display: flex;
-  align-items: center;
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: white;
+  z-index: 1000;
 }
-
-/* Style for the select dropdown */
+.containetFilter{
+  display: none;
+}
+.hidden {
+  display: none;
+}
 .select-box {
-  width: 200px; /* Adjust the width as needed */
+  width: 200px;
   padding: 5px 10px;
   font-size: 14px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background-color: white;
-  appearance: none; /* Removes default arrow in some browsers */
-  -webkit-appearance: none; /* Removes default arrow in Safari */
-  -moz-appearance: none; /* Removes default arrow in Firefox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
   position: relative;
 }
 
-/* To create a custom dropdown arrow */
 .select-box::after {
-  content: "▼"; /* Custom arrow character */
+  content: "▼";
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none; /* Allows clicking through the arrow */
+  pointer-events: none;
 }
 
 /* Sidebar Container */
 .sidebar-div {
   display: grid;
-  grid-template-columns: 300px 1fr; /* Left sidebar 300px, right sidebar takes the remaining space */
-  width: calc(100% - 140px); /* Adjust width to account for the left margin */
+  grid-template-columns: 300px 1fr;
+  width: calc(100% - 140px);
   margin-left: 140px;
   height: 100vh;
 }
 
-/* Left Sidebar */
 .sidebar-left {
-  /* border: 1px solid red; */
   width: 300px;
   height: 750px;
   padding: 20px;
@@ -75,31 +87,24 @@
   height: 50px;
   margin-bottom: 15px;
   width: 100%;
-  /* border: 1px solid red; */
 }
 
-/* Right Sidebar */
 .sidebar-right {
-  /* border: 1px solid blue; */
   padding: 20px;
   width: 932px;
 }
 .sidebar-right h2 {
   text-align: start;
 }
-/* card */
-
-/* Card container styling */
 .card-data {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 20px;
 }
-
 .card {
   width: 300px;
-  height: 462px;
+  height: 399px;
   border-radius: 5px;
   overflow: hidden;
   position: relative;
@@ -107,17 +112,18 @@
 }
 
 /* Image styling */
-.card-image {
+.card-data .card-image {
   width: 100%;
-  height: 380px;
+  height: 350px;
   object-fit: cover;
 }
+
 .card-content {
   text-align: start;
   height: 50px;
-  /* border: 1px solid red; */
 }
 .card span {
+  margin-top: 10px;
   font-size: 14px;
 }
 .card-title {
@@ -125,6 +131,22 @@
   margin-top: -5px;
 }
 .footer-card {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-top: -25px;
+}
+
+.signup-button {
+  margin-right: 10px;
+}
+
+.custom-span {
+  margin-left: auto;
+}
+.togglecDat {
+  display: flex;
+  margin-left: 80px;
   margin-top: -20px;
 }
 
@@ -139,36 +161,40 @@
 .card-icon {
   cursor: pointer;
 }
-/* .custom-span {
-  font-size: 24px;
-  width: 24px;
-  height: 24px;
-  display: inline-block;
-} */
+.sidebar-right {
+  padding: 20px;
+  transition: width 0.3s;
+}
+
+.full-width .sidebar-right {
+  width: 100%;
+}
+
+.card-data.column4 {
+  grid-template-columns: repeat(4, 1fr);
+}
 
 
-/* Responsive Design */
-
-/*  */
 @media only screen and (max-width: 768px) {
-  .container1{
+  .container1 {
     width: 100%;
     justify-content: space-around;
   }
-
-  .container1 .countter-pro{
+.togglecDat{
+  display: none;
+}
+  .container1 .countter-pro {
     display: none;
   }
   .select-box {
-    width: 150px; /* Adjust the width as needed */
+    width: 150px;
     padding: 5px 10px;
     font-size: 14px;
     border-radius: 4px;
     border: 1px solid #ccc;
     background-color: white;
-   
   }
-  .sidebar-div{
+  .sidebar-div {
     width: 100%;
     margin: auto;
     overflow: hidden;
@@ -176,18 +202,17 @@
   .sidebar-left {
     display: none;
   }
-  .sidebar-right{
+  .sidebar-right {
     width: 100%;
   }
-  .card-data{
+  .card-data {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    /* margin: auto; */
     gap: 20px;
   }
-  
+
   .card {
     width: 200px;
     height: 300px;
@@ -195,9 +220,7 @@
     position: relative;
     background-color: white;
   }
-  
-  /* Image styling */
-  .card-image {
+  .card-data .card-image {
     width: 160;
     height: 224px;
     overflow-y: hidden;
@@ -206,96 +229,106 @@
   .card-content {
     text-align: start;
     height: 50px;
-    /* border: 1px solid red; */
   }
   .card span {
     font-size: 10px;
   }
- 
-  
- 
-  
+  .containetFilter{
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 650px) {
-  .container1{
+  .container1 {
     width: 100%;
-    justify-content:space-around;
+    justify-content: space-around;
   }
-  .container1 .countter-pro{
+  .container1 .countter-pro {
     display: none;
   }
   .select-box {
-    width: 120px; /* Adjust the width as needed */
-    padding: 2px ;
+    width: 120px;
+    padding: 2px;
     font-size: 12px;
-    /* border-radius: 4px; */
     border: none;
     background-color: white;
-    
+
     cursor: pointer;
     position: relative;
   }
-  .sidebar-div{
+  .sidebar-div {
     width: 100%;
     margin: auto;
     overflow: hidden;
   }
-  .sidebar-right h2{
+  .sidebar-right h2 {
     display: none;
   }
   .sidebar-left {
+    /* display: none; */
+  }
+ 
+  .sidebar-right {
+    width: 100%;
+  }
+  .card-data {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+
+  .card {
+    width: 168px;
+    height: 290px;
+    border-radius: 5px;
+    position: relative;
+    background-color: white;
+  }
+
+  .card-data .card-image {
+    width: 160;
+    height: 224px;
+    overflow-y: hidden;
+    object-fit: cover;
+  }
+
+  .card-content {
+    text-align: start;
+    height: 50px;
+  }
+  .footer-card span {
+    font-size: 10px;
+  }
+
+  .footer-card .signup-button {
     display: none;
   }
-.sidebar-right{
-  width: 100%;
-}
-.card-data{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: auto;
-  /* margin: auto; */
-  gap: 10px;
+
+  .footer-card .custom-span {
+    margin-left: auto;
+    margin-top: -40px;
+  }
+
+  .footer-card span {
+    font-size: 10px;
+  }
+  .card a {
+    font-size: 10px;
+    display: flex;
+  }
+  .containetFilter{
+    display: block;
+  }
+ 
 }
 
-.card {
-  width: 168px;
-  height: 290px;
-  border-radius: 5px;
-  position: relative;
-  background-color: white;
+.togglecDat {
+  display: block; /* Show by default */
 
+  /* Hide on mobile view (max-width: 650px) */
+  @media (max-width: 650px) {
+    display: none;
+  }
 }
-
-/* Image styling */
-.card-image {
-  width: 160;
-  height: 224px;
-  overflow-y: hidden;
-  object-fit: cover;
-}
-.card-content {
-  text-align: start;
-  height: 50px;
-  /* border: 1px solid red; */
-}
-.card span {
-  font-size: 10px;
-}
-.card-title {
-  text-align: start;
-  margin-top: -5px;
-  font-size: 16px;
-}
-.custom-span {
-  display: block;
-  margin-top: -60px;
-  margin-left: 140px;
-}
-
-
-}
-
-
-
