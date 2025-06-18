@@ -4,6 +4,7 @@ import Product from '../../Components/Product/Product'
 import Footer from '../Footer/Footer'
 
 const MainPage = () => {
+  
   return (
     <div>
       <Navbar/>
